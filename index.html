@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <button onclick=showcountries()> ShowCountries</button>
-    <div id="feed"></div>
-    <script>
-        function showcountries(){
-            let xhr= new XMLHttpRequest()
-            xhr.open('GET','https://restcountries.com/v3.1/all',true);
-          
-            xhr.onload=function(){
-                if(xhr.status==200){
-                    console.log('success');
-                    let countries= JSON.parse(this.response)
-                    countries.forEach(country=>{
-                        const countryCard=document.createElement('div')
-                        countryCard.innerHTML=country.name;
-                        const countryCardImage=document.createElement('img')
-                        countryCardImage.src=country.flag
-                        countryCard.appendChild(countryCardImage)
-                        document.getElementById('feed').appendChild(countryCard)
-                    })
-                }
-            }
-            xhr.send()
-        }
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>Flex-box</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-1">
+        <div class="item1 t1"></div>
+        <div class="item2 t2"></div>
+        <div class="item3 t3"></div>
+        
+      </div>
+      <div class="container-2">
+        <div class="item1 t4"></div>
+        <div class="item2 t5"></div>
+        <div class="item3 t6"></div>
+        
+      </div>
+      <div class="container-3">
+        <div class="item1 t7"></div>
+        <div class="item2 t8"></div>
+        <div class="item3 t9"></div>
+        
+      </div>
+      <div class="container-4">
+        <div class="item1 t10"></div>
+        <div class="item2 t11"></div>
+        <div class="item3 t12 t121"></div>
+       
+      </div>
+      <div class="container-5">
+        <div class="item1 t13 t131"></div>
+        <div class="item2 t14 t141"></div>
+        <div class="item3 t15 t151"></div>
+        
+      </div>
+      <div class="container-6">
+        <div class="item1 t16"></div>
+        <div class="item2 t17 t171"></div>
+        <div class="item3 t18"></div>
+        
+      </div>
+    </div>
+  </body>
 </html>
